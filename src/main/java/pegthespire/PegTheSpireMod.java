@@ -9,7 +9,8 @@ import pegthespire.util.KeywordInfo;
 import pegthespire.util.TextureLoader;
 
 import com.badlogic.gdx.graphics.Color;
-// import pegthespire.characters.Roundrel.Enums.ROUNDREL_COLOR;
+
+import pegthespire.characters.Roundrel.Enums;
 import com.badlogic.gdx.Files;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.backends.lwjgl.LwjglFileHandle;
@@ -64,6 +65,9 @@ public class PegTheSpireMod implements
     public static final String ROUNDREL_SMALL_ORB = characterPath("roundrel/cardback/small_orb.png");
     public static final String ROUNDREL_SHOULDER_1 = characterPath("roundrel/shoulder.png");
     public static final String ROUNDREL_SHOULDER_2 = characterPath("roundrel/shoulder2.png");
+    public static final String ROUNDREL_CORPSE = characterPath("roundrel/deadlin.png");
+    public static final String ROUNDREL_SKELETON_ATLAS = characterPath("roundrel/animation/roundrel_idle.atlas");
+    public static final String ROUNDREL_SKELETON_JSON = characterPath("roundrel/animation/roundrel_idle.json");
 
 
 
@@ -77,7 +81,14 @@ public class PegTheSpireMod implements
         BaseMod.subscribe(this); //This will make BaseMod trigger all the subscribers at their appropriate times.
         logger.info(modID + " subscribed to BaseMod.");
 
-        // BaseMod.addColor();
+        BaseMod.addColor(
+            Enums.ROUNDREL_COLOR,
+            ROUNDREL_COLOR.cpy(), ROUNDREL_COLOR.cpy(), ROUNDREL_COLOR.cpy(),
+            ROUNDREL_COLOR.cpy(), ROUNDREL_COLOR.cpy(), ROUNDREL_COLOR.cpy(), ROUNDREL_COLOR.cpy(),
+            ROUNDREL_ATTACK, ROUNDREL_SKILL, ROUNDREL_POWER, ROUNDREL_ENERGY_ORB,
+            ROUNDREL_ATTACK_P, ROUNDREL_SKILL_P, ROUNDREL_POWER_P,
+            ROUNDREL_ENERGY_ORB_P, ROUNDREL_SMALL_ORB
+        );
     }
 
     @Override
