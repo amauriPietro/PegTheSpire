@@ -1,58 +1,36 @@
-# BaseMod #
-BaseMod provides a number of hooks and a console.
+# Basic Mod
 
-## Requirements ##
-#### General Use ####
-* Java 8+
+This is an empty Slay the Spire mod + a modding tutorial.
 
-#### Development ####
-* Java 8+
-* Maven
+This tutorial will help with setup and the basics of Slay the Spire modding, but it will not teach you Java. If you know nothing of Java or programming in general, you are strongly recommended to look up a free online course and do at least some of it. It is possible to do modding with almost no proper knowledge, but it will make things much more difficult.
 
-## Building ##
-1. Run `mvn package`
+---
 
-## Installation ##
-1. Copy `target/BaseMod.jar` to your ModTheSpire mods directory.
+## Check the wiki to get started:
 
-## Console ##
-Default hotkey is `` ` ``, can be changed from BaseMod's settings screen.
-* `info` toggle Settings.isInfo
-* `relic [id]` generate relic
-* `relic r [id]` lose relic
+https://github.com/Alchyr/BasicMod/wiki
 
-## For Modders ##
-### Hooks ###
-#### Subscription handling ####
-* `BaseMod.subscribeTo...(this)`
-* `BaseMod.unsubscribeFrom...(this)`
+---
 
-#### Subscriptions ####
-Implement the appropriate interface (ex. `basemod.interfaces.PostInitializeSubscription`)
-* `receivePostInitialize()` - One time only, at the end of `CardCrawlGame.initialize()`
-* `receiveRender(SpriteBatch)` - Under tips and the cursor, above everything else
-* `receivePostRender(SpriteBatch)` - Above everything
-* `receivePreUpdate()` - Immediately after input is handled
-* `receivePostUpdate()` - Immediately before input is disposed
+## Know what you're doing?
 
-### Mod Badges ###
-Currently only has full support for the badges themselves. Clicking any will open the BaseMod settings page for now.
-* `BaseMod.registerModBadge(Texture texture, String modName, String author, String description)`
+You can still use this mod as a base, or you could use another template like https://github.com/DarkVexon/ProTemplate
 
-## Changelog ##
-#### v1.0.0 ####
-* Initial release
+You can find more options in the pins of the #modding-technical channel in the Slay the Spire discord server.
 
-#### v1.0.1 ####
-* Scale console by Settings.scale
-* Prevent game hotkeys from activating while console is visible
+---
 
-#### v1.1.0 ####
-* Add mod badges
-* Add initial support for mod settings screens
-* Add `relic` console command
-* Add option to change console keybind on BaseMod settings screen
+### Some HD Slay the Spire art assets (courtesy of Gremious, creator of DefaultMod):
 
-#### v1.1.1 #####
-* Scale mod badges by Settings.scale
-* Scale mod settings screens by Settings.scale
+Includes:
+- Empty Relic Template feat. empty bottle
+- Empty Card Template
+- Color-Changable cardback
+- A couple of HD Monster vectors (Louse, Nob, Sentry, Sneaky Gremlin)
+- A coupe of HD items (J.A.X., A Coin)
+- 2 people silhouettes
+- A curse Background
+
+https://github.com/Gremious/StS-DefaultModBase#some-hd-slay-the-spire-art-assets
+
+---
