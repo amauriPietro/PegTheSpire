@@ -4,6 +4,7 @@ import basemod.BaseMod;
 import basemod.interfaces.EditKeywordsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
+import basemod.interfaces.EditCharactersSubscriber;
 import pegthespire.util.GeneralUtils;
 import pegthespire.util.KeywordInfo;
 import pegthespire.util.TextureLoader;
@@ -11,6 +12,7 @@ import pegthespire.util.TextureLoader;
 import com.badlogic.gdx.graphics.Color;
 
 import pegthespire.characters.Roundrel.Enums;
+import pegthespire.characters.Roundrel;
 import com.badlogic.gdx.Files;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.backends.lwjgl.LwjglFileHandle;
@@ -35,6 +37,7 @@ import java.util.*;
 @SpireInitializer
 public class PegTheSpireMod implements
         EditStringsSubscriber,
+        EditCharactersSubscriber,
         EditKeywordsSubscriber,
         PostInitializeSubscriber {
     public static ModInfo info;
@@ -66,15 +69,18 @@ public class PegTheSpireMod implements
     public static final String ROUNDREL_SHOULDER_1 = characterPath("roundrel/shoulder.png");
     public static final String ROUNDREL_SHOULDER_2 = characterPath("roundrel/shoulder2.png");
     public static final String ROUNDREL_CORPSE = characterPath("roundrel/deadlin.png");
-    public static final String ROUNDREL_SKELETON_ATLAS = characterPath("roundrel/animation/roundrel_idle.atlas");
-    public static final String ROUNDREL_SKELETON_JSON = characterPath("roundrel/animation/roundrel_idle.json");
-
+    // public static final String ROUNDREL_SKELETON_ATLAS = characterPath("roundrel/animation/roundrel_idle.atlas");
+    // public static final String ROUNDREL_SKELETON_JSON = characterPath("roundrel/animation/roundrel_idle.json");
+    public static final String ROUNDREL_SKELETON_ATLAS = characterPath("roundrel/animation/skeleton.atlas");
+    public static final String ROUNDREL_SKELETON_JSON = characterPath("roundrel/animation/skeleton.json");
 
 
 
     //This will be called by ModTheSpire because of the @SpireInitializer annotation at the top of the class.
     public static void initialize() {
+        logger.info("========================= Peglin? =========================");
         new PegTheSpireMod();
+        logger.info("========================= Poglin. =========================");
     }
 
     public PegTheSpireMod() {
@@ -82,7 +88,7 @@ public class PegTheSpireMod implements
         logger.info(modID + " subscribed to BaseMod.");
 
         BaseMod.addColor(
-            Enums.ROUNDREL_COLOR,
+            Enums.RED_COLOR,
             ROUNDREL_COLOR.cpy(), ROUNDREL_COLOR.cpy(), ROUNDREL_COLOR.cpy(),
             ROUNDREL_COLOR.cpy(), ROUNDREL_COLOR.cpy(), ROUNDREL_COLOR.cpy(), ROUNDREL_COLOR.cpy(),
             ROUNDREL_ATTACK, ROUNDREL_SKILL, ROUNDREL_POWER, ROUNDREL_ENERGY_ORB,
@@ -94,13 +100,19 @@ public class PegTheSpireMod implements
     @Override
     public void receivePostInitialize() {
         //This loads the image used as an icon in the in-game mods menu.
-        Texture badgeTexture = TextureLoader.getTexture(imagePath("badge.png"));
+        Texture badgeTexture = TextureLoader.getTexture(imagePath("roundrel_pfp.png"));
         //Set up the mod information displayed in the in-game mods menu.
         //The information used is taken from your pom.xml file.
 
         //If you want to set up a config panel, that will be done here.
         //You can find information about this on the BaseMod wiki page "Mod Config and Panel".
         BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, null);
+    }
+
+    @Override
+    public void receiveEditCharacters() {
+        BaseMod.addCharacter(new Roundrel("Roundrel", Enums.ROUNDREL), ROUNDREL_BUTTON, ROUNDREL_PORTRAIT); //This adds the character to the game.
+        logger.info(modID + " added character: " + Roundrel.Enums.ROUNDREL);
     }
 
     /*----------Localization----------*/

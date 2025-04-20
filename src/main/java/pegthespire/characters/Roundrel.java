@@ -3,8 +3,10 @@ package pegthespire.characters;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import basemod.animations.SpineAnimation;
-import basemod.animations.SpriterAnimation;
 import basemod.abstracts.CustomEnergyOrb;
 
 import com.esotericsoftware.spine.AnimationState;
@@ -22,22 +24,27 @@ import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
+import com.megacrit.cardcrawl.ui.panels.energyorb.EnergyOrbPurple;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.blue.Streamline;
 import com.megacrit.cardcrawl.relics.Akabeko;
 
 import basemod.abstracts.CustomPlayer;
+import static pegthespire.PegTheSpireMod.*;
 import pegthespire.PegTheSpireMod;
 
 public class Roundrel extends CustomPlayer{
+    public static final Logger logger = LogManager.getLogger(PegTheSpireMod.class.getName()); //Used to output to the console.
+
 
     public static class Enums {
         @SpireEnum
         public static PlayerClass ROUNDREL;
-        @SpireEnum(name = "ROUNDREL_COLOR")
-        public static AbstractCard.CardColor ROUNDREL_COLOR;
-        @SpireEnum(name = "ROUNDREL_COLOR")
+        @SpireEnum(name = "ROUNDREL_RED_COLOR")
+        public static AbstractCard.CardColor RED_COLOR;
+        @SpireEnum(name = "ROUNDREL_RED_COLOR")
         public static CardLibrary.LibraryType LIBRARY_COLOR;
     }
 
@@ -48,36 +55,37 @@ public class Roundrel extends CustomPlayer{
     public static final int CARD_DRAW = 3;
     public static final int ORB_SLOTS = 0;
 
-    private static final String ID = PegTheSpireMod.makeID("Roundrel");
+    private static final String ID = makeID("Roundrel");
     private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ID);
     private static final String[] NAMES = characterStrings.NAMES;
     private static final String[] TEXT = characterStrings.TEXT;
 
 
     public Roundrel (String name, PlayerClass setClass) {
-
         super(
             name, 
             setClass,
             new CustomEnergyOrb(null, null, null), 
-            new SpineAnimation(PegTheSpireMod.ROUNDREL_SKELETON_ATLAS, PegTheSpireMod.ROUNDREL_SKELETON_JSON, 1.0F)
+            new SpineAnimation(ROUNDREL_SKELETON_ATLAS, ROUNDREL_SKELETON_JSON, 1.0f)
         );
 
 		this.dialogX = (this.drawX + 0.0F * Settings.scale); // set location for text bubbles
 		this.dialogY = (this.drawY + 220.0F * Settings.scale); // you can just copy these values
-
         initializeClass(null,
-            PegTheSpireMod.ROUNDREL_SHOULDER_1,
-            PegTheSpireMod.ROUNDREL_SHOULDER_2,
-            PegTheSpireMod.ROUNDREL_CORPSE,
+            ROUNDREL_SHOULDER_1,
+            ROUNDREL_SHOULDER_2,
+            ROUNDREL_CORPSE,
             getLoadout(), // loadout
             20.0F,
-            -10.0F,
-            220.0F,
-            290.0F,
+            0F,
+            512.0F,
+            216.0F,
             new EnergyManager(ENERGY_PER_TURN)            
         );
-        // no animation
+
+        loadAnimation(ROUNDREL_SKELETON_ATLAS, ROUNDREL_SKELETON_JSON, 1.0F);
+        AnimationState.TrackEntry e = this.state.setAnimation(0, "Sprite", true);
+        e.setTime(e.getEndTime() * MathUtils.random());
     }
 
     public ArrayList<String> getStartingRelics() {
@@ -135,12 +143,12 @@ public class Roundrel extends CustomPlayer{
 
     @Override
     public AbstractCard.CardColor getCardColor() {
-        return Enums.ROUNDREL_COLOR;
+        return Enums.RED_COLOR;
     }
 
     @Override
     public Color getCardTrailColor() {
-        return PegTheSpireMod.ROUNDREL_COLOR;
+        return ROUNDREL_COLOR;
     }
 
     @Override
@@ -171,12 +179,12 @@ public class Roundrel extends CustomPlayer{
 
     @Override
     public Color getCardRenderColor() {
-        return PegTheSpireMod.ROUNDREL_COLOR;
+        return ROUNDREL_COLOR;
     }
 
     @Override
     public Color getSlashAttackColor() {
-        return PegTheSpireMod.ROUNDREL_COLOR;
+        return ROUNDREL_COLOR;
     }
 
     @Override

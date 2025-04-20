@@ -1,5 +1,5 @@
 {
-  "${modID}:PotionID": {
+  "pegthespire:PotionID": {
     "NAME": "Some Kind of Potion",
     "DESCRIPTIONS": [
       "Little",

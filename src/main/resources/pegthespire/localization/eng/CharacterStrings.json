@@ -1,8 +1,8 @@
 {
-  "${modID}:CharacterID": {
+  "pegthespire:Roundrel": {
     "NAMES": [
-      "The Name (Displayed in character select)",
-      "the Name (but 'the' is lowercase, this is displayed at the top left during gameplay)"
+      "The Roundrel",
+      "the Roundrel"
     ],
     "TEXT": [
       "Line #1 of character select description. NL Line 2 of character select description.",

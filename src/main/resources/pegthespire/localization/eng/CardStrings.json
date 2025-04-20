@@ -1,5 +1,5 @@
 {
-  "${modID}:ExampleCard": {
+  "pegthespire:ExampleCard": {
     "NAME": "Name",
     "DESCRIPTION": "Description. NL Second line.",
     "UPGRADE_DESCRIPTION": "This will automatically be used if the card is upgraded. Remove it if unneeded.",
