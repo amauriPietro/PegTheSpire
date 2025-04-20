@@ -1,0 +1,41 @@
+
+roundrel_fit.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+00_roundrel_scaled_7x_pngcrushed
+  rotate: false
+  xy: 136, 164
+  size: 133, 168
+  orig: 252, 224
+  offset: 70, 7
+  index: -1
+02_roundrel_scaled_7x_pngcrushed
+  rotate: false
+  xy: 1, 164
+  size: 133, 168
+  orig: 252, 224
+  offset: 70, 7
+  index: -1
+01_roundrel_scaled_7x_pngcrushed
+  rotate: false
+  xy: 1, 334
+  size: 133, 168
+  orig: 252, 224
+  offset: 70, 7
+  index: -1
+03_roundrel_scaled_7x_pngcrushed
+  rotate: false
+  xy: 1, 1
+  size: 140, 161
+  orig: 252, 224
+  offset: 63, 7
+  index: -1
+04_roundrel_scaled_7x_pngcrushed
+  rotate: false
+  xy: 143, 1
+  size: 133, 161
+  orig: 252, 224
+  offset: 70, 7
+  index: -1

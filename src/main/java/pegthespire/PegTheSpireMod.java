@@ -71,8 +71,8 @@ public class PegTheSpireMod implements
     public static final String ROUNDREL_CORPSE = characterPath("roundrel/deadlin.png");
     // public static final String ROUNDREL_SKELETON_ATLAS = characterPath("roundrel/animation/roundrel_idle.atlas");
     // public static final String ROUNDREL_SKELETON_JSON = characterPath("roundrel/animation/roundrel_idle.json");
-    public static final String ROUNDREL_SKELETON_ATLAS = characterPath("roundrel/animation/skeleton.atlas");
-    public static final String ROUNDREL_SKELETON_JSON = characterPath("roundrel/animation/skeleton.json");
+    public static final String ROUNDREL_SKELETON_ATLAS = characterPath("roundrel/animation/roundrel_skeleton.atlas");
+    public static final String ROUNDREL_SKELETON_JSON = characterPath("roundrel/animation/roundrel_skeleton.json");
 
 
 

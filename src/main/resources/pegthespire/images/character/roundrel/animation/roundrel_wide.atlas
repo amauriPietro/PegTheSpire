@@ -1,0 +1,41 @@
+
+roundrel_wide.png
+size: 512,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+02_roundrel_wide
+  rotate: false
+  xy: 225, 1
+  size: 211, 188
+  orig: 389, 245
+  offset: 105, 6
+  index: -1
+00_roundrel_wide
+  rotate: false
+  xy: 214, 191
+  size: 210, 188
+  orig: 389, 245
+  offset: 106, 6
+  index: -1
+01_roundrel_wide
+  rotate: false
+  xy: 1, 183
+  size: 211, 188
+  orig: 389, 245
+  offset: 105, 6
+  index: -1
+04_roundrel_wide
+  rotate: false
+  xy: 1, 373
+  size: 211, 180
+  orig: 389, 245
+  offset: 105, 6
+  index: -1
+03_roundrel_wide
+  rotate: false
+  xy: 1, 1
+  size: 222, 180
+  orig: 389, 245
+  offset: 94, 6
+  index: -1

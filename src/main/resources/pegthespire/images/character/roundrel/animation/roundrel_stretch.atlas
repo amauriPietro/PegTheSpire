@@ -1,0 +1,41 @@
+
+roundrel_stretch.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+04_roundrel_stretch
+  rotate: false
+  xy: 166, 1
+  size: 155, 163
+  orig: 289, 224
+  offset: 79, 6
+  index: -1
+03_roundrel_stretch
+  rotate: false
+  xy: 1, 1
+  size: 163, 163
+  orig: 289, 224
+  offset: 71, 6
+  index: -1
+00_roundrel_stretch
+  rotate: false
+  xy: 1, 166
+  size: 155, 170
+  orig: 289, 224
+  offset: 79, 6
+  index: -1
+01_roundrel_stretch
+  rotate: false
+  xy: 1, 338
+  size: 155, 170
+  orig: 289, 224
+  offset: 79, 6
+  index: -1
+02_roundrel_stretch
+  rotate: false
+  xy: 158, 166
+  size: 155, 170
+  orig: 289, 224
+  offset: 79, 6
+  index: -1

@@ -66,7 +66,7 @@ public class Roundrel extends CustomPlayer{
             name, 
             setClass,
             new CustomEnergyOrb(null, null, null), 
-            new SpineAnimation(ROUNDREL_SKELETON_ATLAS, ROUNDREL_SKELETON_JSON, 1.0f)
+            new SpineAnimation(ROUNDREL_SKELETON_ATLAS, ROUNDREL_SKELETON_JSON, 0.7f)
         );
 
 		this.dialogX = (this.drawX + 0.0F * Settings.scale); // set location for text bubbles
@@ -76,14 +76,14 @@ public class Roundrel extends CustomPlayer{
             ROUNDREL_SHOULDER_2,
             ROUNDREL_CORPSE,
             getLoadout(), // loadout
-            20.0F,
-            0F,
-            512.0F,
-            216.0F,
+            20.0F, 
+            -85.0F, 
+            220.0F, 
+            290.0F,
             new EnergyManager(ENERGY_PER_TURN)            
         );
 
-        loadAnimation(ROUNDREL_SKELETON_ATLAS, ROUNDREL_SKELETON_JSON, 1.0F);
+        loadAnimation(ROUNDREL_SKELETON_ATLAS, ROUNDREL_SKELETON_JSON, 1F);
         AnimationState.TrackEntry e = this.state.setAnimation(0, "Sprite", true);
         e.setTime(e.getEndTime() * MathUtils.random());
     }
@@ -120,10 +120,10 @@ public class Roundrel extends CustomPlayer{
    public void damage(DamageInfo info) {
         // TODO: check if this is correct
         if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.output - this.currentBlock > 0) {
-            AnimationState.TrackEntry e1 = this.state.setAnimation(1, "Hurt", false);
-            this.state.addAnimation(1, "WingFlap", true, 0.0F);
-            AnimationState.TrackEntry e = this.state.setAnimation(0, "Hurt", false);
-            this.state.addAnimation(0, "animation", true, 0.0F);
+            AnimationState.TrackEntry e1 = this.state.setAnimation(1, "Damage", false);
+            this.state.addAnimation(1, "Damage", true, 0.0F);
+            AnimationState.TrackEntry e = this.state.setAnimation(0, "Sprite", false);
+            this.state.addAnimation(0, "Sprite", true, 0.0F);
             e.setTimeScale(1.0F);
             e1.setTimeScale(1.0f);
         }
