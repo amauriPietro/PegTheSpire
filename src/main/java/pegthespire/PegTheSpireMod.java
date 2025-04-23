@@ -113,7 +113,7 @@ public class PegTheSpireMod implements
     @Override
     public void receivePostInitialize() {
         //This loads the image used as an icon in the in-game mods menu.
-        Texture badgeTexture = TextureLoader.getTexture(imagePath("roundrel_pfp.png"));
+        Texture badgeTexture = TextureLoader.getTexture(imagePath("badge.png"));
         //Set up the mod information displayed in the in-game mods menu.
         //The information used is taken from your pom.xml file.
 

@@ -17,14 +17,14 @@ import pegthespire.characters.Roundrel;
 
 import static pegthespire.PegTheSpireMod.*;
 
-public class Pebball extends AbstractOrb {
+public class Rubborb extends AbstractOrb {
 
     /*
      * Pebball: Deal 6(9) damage to the first enemy. Starter card.
      */
 
     // TEXT DECLARATION
-    public static final String ID = PegTheSpireMod.makeID(Pebball.class.getSimpleName());
+    public static final String ID = PegTheSpireMod.makeID(Rubborb.class.getSimpleName());
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     
     // TODO: add a custom image for the card
@@ -36,7 +36,7 @@ public class Pebball extends AbstractOrb {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.BASIC;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = Roundrel.Enums.RED_COLOR;
@@ -45,13 +45,13 @@ public class Pebball extends AbstractOrb {
 
     private static final int DAMAGE = 6;
     private static final int UPGRADE_PLUS_DMG = 3;
-    private static final int PEGS = 20;
+    private static final int PEGS = 40;
     
 
     // /STAT DECLARATION/
 
     // TODO: implement crits
-    public Pebball() {
+    public Rubborb() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, PEGS);
         baseDamage = DAMAGE;
         this.tags.add(CardTags.STARTER_STRIKE); // Makes it a starter card

@@ -17,5 +17,32 @@
       "This is an example of a card that has a custom description.",
       "It can be used to show how to use the card."
     ]
+  },
+  "pegthespire:Rubborb": {
+    "NAME": "Rubborb",
+    "DESCRIPTION": "Deal !D! damage.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage",
+    "EXTENDED_DESCRIPTION": [
+      "This is an example of a card that has a custom description.",
+      "It can be used to show how to use the card."
+    ]
+  },
+  "pegthespire:Daggorb": {
+    "NAME": "Daggorb",
+    "DESCRIPTION": "Deal !D! damage.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage",
+    "EXTENDED_DESCRIPTION": [
+      "This is an example of a card that has a custom description.",
+      "It can be used to show how to use the card."
+    ]
+  },
+  "pegthespire:Testorb": {
+    "NAME": "Testorb",
+    "DESCRIPTION": "Deal !D! damage.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage",
+    "EXTENDED_DESCRIPTION": [
+      "This is an example of a card that has a custom description.",
+      "It can be used to show how to use the card."
+    ]
   }
 }

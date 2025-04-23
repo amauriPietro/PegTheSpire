@@ -117,6 +117,8 @@ public class Roundrel extends CustomPlayer{
         retVal.add(Pebball.ID);
         retVal.add(Pebball.ID);
         retVal.add(Pebball.ID);
+        retVal.add(Rubborb.ID);
+        // retVal.add(Daggorb.ID);
         return retVal;
     }
 
