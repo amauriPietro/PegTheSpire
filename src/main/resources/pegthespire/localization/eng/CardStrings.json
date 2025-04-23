@@ -8,5 +8,14 @@
       "If you need to use it for stuff.",
       "Blizzard is a good example for this."
     ]
+  },
+  "pegthespire:Pebball": {
+    "NAME": "Pebball",
+    "DESCRIPTION": "Deal !D! damage.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage",
+    "EXTENDED_DESCRIPTION": [
+      "This is an example of a card that has a custom description.",
+      "It can be used to show how to use the card."
+    ]
   }
 }

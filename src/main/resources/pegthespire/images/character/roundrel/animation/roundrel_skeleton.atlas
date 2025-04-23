@@ -9,40 +9,40 @@ repeat: none
   xy: 1, 373
   size: 210, 188
   orig: 389, 245
-  offset: 106, 6
+  offset: 106, 120
   index: -1
 03_roundrel_wide
   rotate: false
   xy: 1, 1
   size: 222, 180
   orig: 389, 245
-  offset: 94, 6
+  offset: 94, 120
   index: -1
 01_roundrel_wide
   rotate: false
   xy: 1, 183
   size: 211, 188
   orig: 389, 245
-  offset: 105, 6
+  offset: 105, 120
   index: -1
 04_roundrel_wide
   rotate: false
   xy: 213, 381
   size: 211, 180
   orig: 389, 245
-  offset: 105, 6
+  offset: 105, 120
   index: -1
 02_roundrel_wide
   rotate: false
   xy: 214, 191
   size: 211, 188
   orig: 389, 245
-  offset: 105, 6
+  offset: 105, 120
   index: -1
 33_roundrel_wide
   rotate: false
   xy: 225, 1
   size: 212, 188
   orig: 389, 245
-  offset: 105, 6
+  offset: 105, 120
   index: -1

@@ -24,11 +24,11 @@ import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
-import com.megacrit.cardcrawl.ui.panels.energyorb.EnergyOrbPurple;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
-import com.megacrit.cardcrawl.cards.blue.Streamline;
+// import com.megacrit.cardcrawl.cards.blue.Streamline;
+import pegthespire.cards.*;
 import com.megacrit.cardcrawl.relics.Akabeko;
 
 import basemod.abstracts.CustomPlayer;
@@ -76,8 +76,8 @@ public class Roundrel extends CustomPlayer{
             ROUNDREL_SHOULDER_2,
             ROUNDREL_CORPSE,
             getLoadout(), // loadout
-            20.0F, 
-            -85.0F, 
+            0F, 
+            -20.0F, 
             220.0F, 
             290.0F,
             new EnergyManager(ENERGY_PER_TURN)            
@@ -113,7 +113,10 @@ public class Roundrel extends CustomPlayer{
     public ArrayList<String> getStartingDeck() {
         // TODO: add cards
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(Streamline.ID); // Streamline
+        retVal.add(Pebball.ID);
+        retVal.add(Pebball.ID);
+        retVal.add(Pebball.ID);
+        retVal.add(Pebball.ID);
         return retVal;
     }
 

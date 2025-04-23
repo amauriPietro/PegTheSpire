@@ -1,10 +1,12 @@
 package pegthespire;
 
+import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.interfaces.EditKeywordsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import basemod.interfaces.EditCharactersSubscriber;
+import basemod.interfaces.EditCardsSubscriber;
 import pegthespire.util.GeneralUtils;
 import pegthespire.util.KeywordInfo;
 import pegthespire.util.TextureLoader;
@@ -30,6 +32,7 @@ import com.megacrit.cardcrawl.localization.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.scannotation.AnnotationDB;
+import pegthespire.cards.AbstractOrb;
 
 import java.nio.charset.StandardCharsets;
 import java.util.*;
@@ -39,6 +42,7 @@ public class PegTheSpireMod implements
         EditStringsSubscriber,
         EditCharactersSubscriber,
         EditKeywordsSubscriber,
+        EditCardsSubscriber,
         PostInitializeSubscriber {
     public static ModInfo info;
     public static String modID; //Edit your pom.xml to change this
@@ -50,6 +54,15 @@ public class PegTheSpireMod implements
     //to avoid conflicts between different mods using the same name for things.
     public static String makeID(String id) {
         return modID + ":" + id;
+    }
+    public static String makeAttackCardPath(String id) {
+        return imagePath("cards/attack/" + id);
+    }
+    public static String makeSkillCardPath(String id) {
+        return imagePath("cards/skill/" + id);
+    }
+    public static String makePowerCardPath(String id) {
+        return imagePath("cards/power/" + id);
     }
     // Generic assets
     public static final Color ROUNDREL_COLOR = CardHelper.getColor(255.0f, 165.0f, 0.0f); // Orange color
@@ -113,6 +126,18 @@ public class PegTheSpireMod implements
     public void receiveEditCharacters() {
         BaseMod.addCharacter(new Roundrel("Roundrel", Enums.ROUNDREL), ROUNDREL_BUTTON, ROUNDREL_PORTRAIT); //This adds the character to the game.
         logger.info(modID + " added character: " + Roundrel.Enums.ROUNDREL);
+    }
+
+    @Override
+    public void receiveEditCards() {
+        logger.info("adding cards");
+
+        new AutoAdd(modID)
+                .packageFilter(AbstractOrb.class)
+                .setDefaultSeen(true)
+                .cards(); 
+        logger.info(modID + " added cards.");
+
     }
 
     /*----------Localization----------*/
